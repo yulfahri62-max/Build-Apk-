@@ -6,6 +6,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Test
-        run: echo "WORKFLOW BERHASIL"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check files
+        run: |
+          echo "Repository berhasil diakses"
+          echo "Branch: ${{ github.ref_name }}"
+          echo ""
+          echo "Workflow files:"
+          find .github/workflows -type f -maxdepth 1 -print
+
+      - name: Test GitHub Actions
+        run: |
+          echo "GitHub Actions berjalan dengan normal"
+          echo "Test Build SUCCESS"
