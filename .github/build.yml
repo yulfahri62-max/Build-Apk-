@@ -1,37 +1,12 @@
-name: Build Flutter APK
+name: Test Build
 
 on:
   workflow_dispatch:
-    inputs:
-      zip_url:
-        description: URL download ZIP project Flutter
-        required: true
-        type: string
-
-      tag:
-        description: Tag build
-        required: true
-        type: string
-
-      build_type:
-        description: debug / release
-        required: true
-        default: release
-        type: string
-
-      only_analyze:
-        description: Hanya analyze
-        required: false
-        default: "false"
-        type: string
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test workflow
-        run: |
-          echo "Workflow berhasil!"
-          echo "Tag: ${{ inputs.tag }}"
-          echo "Build type: ${{ inputs.build_type }}"
+      - name: Test
+        run: echo "WORKFLOW BERHASIL"
